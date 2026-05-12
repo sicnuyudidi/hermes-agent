@@ -2939,6 +2939,7 @@ class FeishuAdapter(BasePlatformAdapter):
         quote = getattr(message, "quote", None) or {}
         quote_id = quote.get("id") or quote.get("message_id") or None
         quote_text = quote.get("text") or None
+        reply_to_text = None
 
         reply_to_message_id = (
             getattr(message, "parent_id", None)
